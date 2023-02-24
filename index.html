@@ -207,6 +207,8 @@
       <div class="relative w-full h-full max-w-2xl md:h-auto my-0">
         <!-- Modal content -->
         <div class="relative bg-gray-100 rounded-lg shadow">
+          <form name="doc-submission" method="POST" data-netlify="true"></form>
+
           <!-- Modal header -->
           <div class="flex items-start justify-between p-4 border-b rounded-t">
             <button
@@ -237,7 +239,6 @@
               <div class="mb-2">
 
 
-                <form name="doc-submission" method="POST" data-netlify="true"></form>
                   <!-- Show the image -->
                   <template x-if="imageUrl">
                     <img
@@ -259,7 +260,6 @@
                     accept="image/*"
                     @change="fileChosen"
                   />
-                </form>
               </div>
             </div>
           </div>
@@ -277,6 +277,7 @@
               Envoyer
             </button>
           </div>
+          </form>
         </div>
       </div>
     </div>
