@@ -28,7 +28,6 @@
         submitTextNl: 'Stuur uw bijdrage <u>hier</u>'
   }"
   >
-
     <div class="max-w-md mx-auto my-0">
       <header class="pt-2 pb-2 flex justify-center mt-5 -mb-2">
         <svg
@@ -310,62 +309,81 @@
       </div>
     </div>
 
-    <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" x-show="showFormConfirmation" x-cloak>
-      <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" ></div>
-    
-      <div class="fixed inset-0 z-10 overflow-y-auto" x-transition:enter="opacity-0 ease-out duration-300"
-      x-transition:enter-start="opacity-0"
-      x-transition:enter-end="opacity-100"
-      x-transition:leave="opacity-100 ease-in duration-200"
-      x-transition:leave-start="opacity-100"
-      x-transition:leave-end="opacity-0">
-      
-      <div class="fixed inset-0 flex items-center justify-center z-10 overflow-y-auto">
-        <div class="relative transform w-full max-w-md overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:p-6" x-transition:enter="transition ease-out duration-300" x-transition:leave="transition ease-in duration-200" 
-          x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" 
-          x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" 
-          x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" 
-          x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
-          
-          <div class="flex items-start justify-between rounded-t m-2">
-            <button
-              type="button"
-              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-              data-modal-hide="defaultModal"
-              @click="showModal = false"
-            >
-              <svg
-                aria-hidden="true"
-                class="w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
+    <div
+      class="relative z-10"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+      x-show="showFormConfirmation"
+      x-cloak
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+      ></div>
+
+      <div
+        class="fixed inset-0 z-10 overflow-y-auto"
+        x-transition:enter="opacity-0 ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="opacity-100 ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+      >
+        <div
+          class="fixed inset-0 flex items-center justify-center z-10 overflow-y-auto"
+        >
+          <div
+            class="relative transform w-full max-w-md overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:p-6"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+            x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+            x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+          >
+            <div class="flex items-start justify-between rounded-t m-2">
+              <button
+                type="button"
+                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+                data-modal-hide="defaultModal"
+                @click="showModal = false"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-              <span class="sr-only">Close modal</span>
-            </button>
-          </div>
+                <svg
+                  aria-hidden="true"
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="sr-only">Close modal</span>
+              </button>
+            </div>
             <div>
-              
-              <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full -mt-6 -mb-4">
-                <img src="./assets/img/icon.png" alt="">
+              <div
+                class="mx-auto flex h-16 w-16 items-center justify-center rounded-full -mt-6 -mb-4"
+              >
+                <img src="./assets/img/icon.png" alt="" />
               </div>
               <div class="mt-1 text-center sm:mt-5">
-                <h3 class="text-base font-semibold leading-6 text-gray-900 mx-6 my-4" id="modal-title">Merci. Bedankt. Thank you.</h3>
-                
+                <h3
+                  class="text-base font-semibold leading-6 text-gray-900 mx-6 my-4"
+                  id="modal-title"
+                >
+                  Merci. Bedankt. Thank you.
+                </h3>
               </div>
             </div>
-   
           </div>
         </div>
       </div>
     </div>
-
 
     <footer
       class="bg-black text-md sm:text-xl md:tx-2xl lg:text-3xl text-white text-center font-bold fixed inset-x-0 bottom-0 p-3"
@@ -483,19 +501,19 @@
       }
 
       function submitForm(event) {
-    const formData = new FormData(event.target);
+        const formData = new FormData(event.target);
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => {
-        showModal= false;
-        showFormConfirmation = true;
-      })
-      .catch((error) => alert(error));
-  }
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        })
+          .then(() => {
+            showModal = false;
+            showFormConfirmation = true;
+          })
+          .catch((error) => alert(error));
+      }
     </script>
   </body>
 </html>
