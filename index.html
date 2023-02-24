@@ -97,13 +97,13 @@
               réagir, veut aider, veut y mettre du sien.
             </p>
             <p class="mb-4">
-              Voici une petite demande au nom de Soumaya, Allan, Dalila, Bayram
+              Voici une petite demande au nom de Allan, Dalila, Soumaya, Bayram
               et Haïkel de prendre un moment de votre temps et de profiter de
               vos compétences créatives (quelles qu'elles soient) pour faire une
               affiche / bannière / police de caractère / dessin / t-shirt /
               slogan / texte appelant à:
             </p>
-            <h2 class="mb-4 font-bold italic text-center text-[#FF0000]">
+            <h2 class="mb-4 font-bold uppercase text-center text-[#FF0000]">
               Justice pour Sourour / Justice for Sourour
             </h2>
             <p class="mb-3">
@@ -126,6 +126,7 @@
               soi.
             </p>
             <p class="mb-3">Nous vous remercions.</p>
+            <p class="mb-3">#justicepoursourour</p>
           </div>
 
           <div x-show="showEn" x-cloak>
@@ -143,12 +144,12 @@
               our bit and we want to help.
             </p>
             <p class="mb-4">
-              Here is a little request on behalf of Soumaya, Allan, Dalila,
-              Byram and Haïkel to take a moment of your time and use your
+              Here is a little request on behalf of Allan, Dalila, Soumaya,
+              Bayram and Haïkel to take a moment of your time and use your
               creative skills (whatever they may be) to make a poster / banner /
               typeface / drawing / t-shirt / slogan / text calling for:
             </p>
-            <h2 class="mb-4 font-bold italic text-center text-[#FF0000]">
+            <h2 class="mb-4 font-bold uppercase text-center text-[#FF0000]">
               Justice pour Sourour / Justice for Sourour
             </h2>
             <p class="mb-3">
@@ -170,6 +171,7 @@
               via download.
             </p>
             <p class="mb-3">Thank you.</p>
+            <p class="mb-3">#justiceforsourour</p>
           </div>
 
           <div x-show="showNl" x-cloak>
@@ -186,13 +188,13 @@
               bijdragen, helpen.
             </p>
             <p class="mb-4">
-              Hierbij delen we met jullie een verzoek namens Soumaya, Allan,
-              Dalila, Bayram en Haïkel om een moment van je tijd te gebruiken en
-              je creatieve vaardigheden (wat ze ook mogen zijn) te gebruiken om
-              een poster/banner/lettertype/tekening/t-shirt/slogan/tekst te
+              Hierbij delen we met jullie een verzoek namens Allan, Dalila,
+              Soumaya, Bayram en Haïkel om een moment van je tijd te gebruiken
+              en je creatieve vaardigheden (wat ze ook mogen zijn) te gebruiken
+              om een poster/banner/lettertype/tekening/t-shirt/slogan/tekst te
               maken die oproept tot:
             </p>
-            <h2 class="mb-4 font-bold italic text-center text-[#FF0000]">
+            <h2 class="mb-4 font-bold uppercase text-center text-[#FF0000]">
               Justice pour Sourour / Justice for Sourour
             </h2>
             <p class="mb-3">
@@ -214,6 +216,7 @@
               printbaar te maken via download.
             </p>
             <p class="mb-3">Bedankt.</p>
+            <p class="mb-3">#justiceforsourour</p>
           </div>
         </div>
       </main>
@@ -280,7 +283,8 @@
                       name="file"
                       type="file"
                       accept="image/*"
-                      @change="fileChosen" required
+                      @change="fileChosen"
+                      required
                     />
                   </label>
                 </div>
@@ -401,7 +405,6 @@
         "commbeurs-justicepoursourour.jpg",
         "bravasgraphix-justicepoursourour.jpg",
         "bravasgraphix2-justicepoursourour.jpg",
-        
       ];
       const imageContainer = document.getElementById("image-container");
       // Loop through the images (assuming you have 3 images named image1.jpg, image2.jpg, and image3.jpg)
