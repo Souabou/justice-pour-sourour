@@ -7,5 +7,8 @@
     "build:css": "npx tailwindcss -i ./assets/src/tailwind.css -o ./assets/css/styles.css --watch"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2"
+  }
 }
