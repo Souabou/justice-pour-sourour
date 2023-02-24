@@ -235,6 +235,7 @@
             name="fileForm"
             enctype="multipart/form-data"
             data-netlify="true"
+            netlify
           >
             <!-- Modal header -->
             <div class="flex items-start justify-between p-4 rounded-t">
@@ -501,6 +502,7 @@
       }
 
       function submitForm(event) {
+        console.log('hi')
         const formData = new FormData(event.target);
 
         fetch("/", {
@@ -509,6 +511,7 @@
           body: new URLSearchParams(formData).toString(),
         })
           .then(() => {
+            console.log('hi')
             showModal = false;
             showFormConfirmation = true;
           })
