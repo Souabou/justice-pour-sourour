@@ -1,0 +1,11 @@
+{
+  "name": "justice-pour-sourour",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./assets/src/tailwind.css -o ./assets/css/styles.css --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}
