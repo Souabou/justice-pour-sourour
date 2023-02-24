@@ -19,7 +19,7 @@
     class="font-monospace mx-5 bg-gray-100"
     x-data="{
     showModal: false,
-    showFormConfirmation: true,
+    showFormConfirmation: false,
     showFr: true,
         showNl: false,
         showEn: false,
@@ -279,7 +279,7 @@
                       name="file"
                       type="file"
                       accept="image/*"
-                      @change="fileChosen"
+                      @change="fileChosen" required
                     />
                   </label>
                 </div>
@@ -348,7 +348,7 @@
                 type="button"
                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                 data-modal-hide="defaultModal"
-                @click="showFormConfirmation false"
+                @click="showFormConfirmation = false"
               >
                 <svg
                   aria-hidden="true"
