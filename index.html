@@ -502,7 +502,6 @@
       }
 
       function submitForm(event) {
-        console.log('hi')
         const formData = new FormData(event.target);
 
         fetch("/", {
@@ -511,9 +510,8 @@
           body: new URLSearchParams(formData).toString(),
         })
           .then(() => {
-            console.log('hi')
-            showModal = false;
-            showFormConfirmation = true;
+            this.showModal = false;
+            this.showFormConfirmation = true;
           })
           .catch((error) => alert(error));
       }
