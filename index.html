@@ -64,7 +64,7 @@
             >
           </div>
           <div
-            class="submit uppercase text-[#FF0000] font-extrabold"
+            class="submit uppercase text-[#FF0000] font-normal"
             x-html="showFr ? submitTextFr : showNl ? submitTextNl : showEn ? submitTextEn : ''"
             @click="showModal = true"
           >
@@ -74,6 +74,7 @@
             .submit u {
               color: red;
               text-decoration: underline;
+              font-weight: 800;
             }
             .submit {
               color: black;
@@ -395,11 +396,8 @@
     </footer>
     <script>
       const submissions = [
-        "steve-justicepoursourour.jpg",
         "stevejakobs-justicepoursourour.jpg",
-        "stevejakobs2-justicepoursourour.jpg",
         "commbeurs-justicepoursourour.jpg",
-        "commbeurs2-justicepoursourour.jpg",
         "bravasgraphix-justicepoursourour.jpg",
         "bravasgraphix2-justicepoursourour.jpg",
         "lepacifique-justicepoursourour.jpeg",
