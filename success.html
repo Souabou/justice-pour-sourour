@@ -178,7 +178,7 @@
 			<div class="relative w-full max-w-2xl h-auto my-0">
 				<!-- Modal content -->
 				<div class="relative bg-gray-100 rounded-lg shadow">
-					<form action="/success" method="POST" name="submissionsForSourour" enctype="multipart/form-data" data-netlify="true">
+					<form action="/success" method="POST" name="submissions" enctype="multipart/form-data" data-netlify="true">
 						<!-- Modal header -->
 						<div class="flex items-start justify-between p-4 rounded-t">
 							<button
@@ -203,12 +203,7 @@
 								<div class="mb-2">
 									<!-- Show the image -->
 									<template x-if="imageUrl">
-										<img :src="imageUrl" class="object-cover rounded border border-gray-200" />
-									</template>
-
-									<!-- Show the gray box when image is not available -->
-									<template x-if="!imageUrl">
-										<div class="border rounded border-gray-200 bg-gray-100" style="width: 100px; height: 100px"></div>
+										<img :src="imageUrl" class="object-cover rounded border border-gray-200 max-h-[10vh]" style="max-width: 30vw" />
 									</template>
 
 									<!-- Image file selector -->
@@ -224,12 +219,18 @@
 								type="text"
 								name="name"
 								:placeholder="showFr ? 'Votre nom' : showEn ? 'Your name' : showNl ? 'Uw naam' : ''"
-								class="h-auto w-full"
+								class="h-auto w-full px-2 py-1 rounded-md text-sm"
+							/>
+							<input
+								type="text"
+								name="email"
+								:placeholder="showFr ? 'Votre email' : showEn ? 'Your email' : showNl ? 'Uw email' : ''"
+								class="h-auto w-full px-2 py-1 rounded-md text-sm"
 							/>
 							<button
 								data-modal-hide="defaultModal"
 								type="submit"
-								class="text-white bg-[#FF0000] hover:bg-opacity-25 hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-1 text-center"
+								class="text-white bg-[#FF0000] hover:bg-opacity-25 hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-2 py-1 text-center"
 								x-text="showFr ? 'Envoyer' : showEn ? 'Send' : showNl ? 'Vestuur' : ''"
 							>
 								Send
@@ -298,7 +299,7 @@
 		</footer>
 		<script>
 			const submissions = [
-				'stevejakobs-justicepoursourour.jpg',
+				'stevejakobs-justicepoursourour.png',
 				'lepacifique-justicepoursourour.jpeg',
 				'commbeurs-justicepoursourour.jpg',
 				'bravasgraphix-justicepoursourour.jpg',
@@ -352,7 +353,6 @@
 				const img = document.createElement('img');
 
 				// Set the src and alt attributes based on the image number
-
 				img.src = `assets/img/${submissions[i]}`;
 				img.alt = `Image ${i}`;
 				img.classList.add('w-full', 'mb-8', 'sm:max-w-[35vh]');
