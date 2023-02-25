@@ -24,7 +24,6 @@
         submitTextEn: 'Send your contribution <u>here</u>',
         submitTextNl: 'Stuur uw bijdrage <u>hier</u>'
   }"
-		@submit.prevent="submitForm"
 	>
 		<div class="max-w-md mx-auto my-0">
 			<header class="pt-2 pb-2 flex justify-center mt-5 -mb-2">
@@ -214,7 +213,7 @@
 
 									<!-- Image file selector -->
 									<label>
-										<input class="mt-2" name="submissionFile" type="file" @change="fileChosen" />
+										<input class="mt-2" name="submissionFile" type="file" accept="image/*" @change="fileChosen" />
 									</label>
 								</div>
 							</div>
