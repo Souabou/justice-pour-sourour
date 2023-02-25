@@ -213,7 +213,7 @@
 
 									<!-- Image file selector -->
 									<label>
-										<input class="mt-2" name="file" type="file" @change="fileChosen" />
+										<input class="mt-2" name="file" type="file" accept="image/*" @change="fileChosen" />
 									</label>
 								</div>
 							</div>
@@ -391,6 +391,7 @@
 
 			function submitForm(event) {
 				const formData = new FormData(event.target);
+				console.log(formData);
 
 				fetch('/', {
 					method: 'POST',
@@ -398,8 +399,8 @@
 					body: new URLSearchParams(formData).toString(),
 				})
 					.then(() => {
-						this.showModal = false;
-						this.showFormConfirmation = true;
+						// this.showModal = false;
+						// this.showFormConfirmation = true;
 					})
 					.catch((error) => alert(error));
 			}
