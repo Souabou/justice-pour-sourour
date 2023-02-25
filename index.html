@@ -177,7 +177,25 @@
 		>
 			<div class="relative w-full max-w-2xl h-auto my-0">
 				<!-- Modal content -->
-				<div class="relative bg-gray-100 rounded-lg shadow" @submit.prevent="submitForm">
+				<div
+					class="relative bg-gray-100 rounded-lg shadow"
+					@submit.prevent="{submitForm(event) {
+          const formData = new FormData(event.target);
+          console.log(formData);
+
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'multipart/form-data' },
+            body: new URLSearchParams(formData).toString(),
+          })
+            .then(() => {
+              // this.showModal = false;
+              // this.showFormConfirmation = true;
+            })
+            .catch((error) => alert(error));
+        }
+      }"
+				>
 					<form name="submissionsForSourour" enctype="multipart/form-data" data-netlify="true">
 						<input type="hidden" name="submissions" value="file-upload" />
 						<!-- Modal header -->
@@ -387,22 +405,6 @@
 						reader.onload = (e) => callback(e.target.result);
 					},
 				};
-			}
-
-			function submitForm(event) {
-				const formData = new FormData(event.target);
-				console.log(formData);
-
-				fetch('/', {
-					method: 'POST',
-					headers: { 'Content-Type': 'multipart/form-data' },
-					body: new URLSearchParams(formData).toString(),
-				})
-					.then(() => {
-						// this.showModal = false;
-						// this.showFormConfirmation = true;
-					})
-					.catch((error) => alert(error));
 			}
 		</script>
 	</body>
