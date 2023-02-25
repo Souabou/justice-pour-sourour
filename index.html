@@ -230,16 +230,16 @@
       class="fixed top-0 left-0 right-0 z-50 flex items-center justify-center w-full h-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 bg-black/50"
       x-show="showModal"
       x-cloak
-      @submit.prevent="submitForm"
+
     >
       <div class="relative w-full max-w-2xl h-auto my-0">
         <!-- Modal content -->
         <div class="relative bg-gray-100 rounded-lg shadow">
           <form
             name="fileForm"
-            
+
             data-netlify="true"
-            
+            @submit.prevent="submitForm"
           >
             <!-- Modal header -->
             <div class="flex items-start justify-between p-4 rounded-t">
