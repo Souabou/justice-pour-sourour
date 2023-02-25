@@ -388,8 +388,8 @@
 
 				fetch('/', {
 					method: 'POST',
-					headers: { 'Content-Type': 'multipart/form-data' },
-					body: formData,
+					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+					body: new URLSearchParams(formData).toString(),
 				})
 					.then(() => {
 						this.showModal = false;
