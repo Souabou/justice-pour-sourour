@@ -178,7 +178,7 @@
 			<div class="relative w-full max-w-2xl h-auto my-0">
 				<!-- Modal content -->
 				<div class="relative bg-gray-100 rounded-lg shadow" @submit.prevent="submitForm">
-					<form name="submissions" enctype="multipart/form-data" netlify>
+					<form name="submissions" netlify>
 						<!-- Modal header -->
 						<div class="flex items-start justify-between p-4 rounded-t">
 							<button
@@ -225,7 +225,6 @@
 								name="name"
 								:placeholder="showFr ? 'Votre nom' : showEn ? 'Your name' : showNl ? 'Uw naam' : ''"
 								class="h-auto w-full"
-								required
 							/>
 							<button
 								data-modal-hide="defaultModal"
@@ -395,7 +394,7 @@
 
 				fetch('/', {
 					method: 'POST',
-					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+					// headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 					body: new URLSearchParams(formData).toString(),
 				})
 					.then(() => {
