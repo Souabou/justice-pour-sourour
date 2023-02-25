@@ -177,8 +177,8 @@
 		>
 			<div class="relative w-full max-w-2xl h-auto my-0">
 				<!-- Modal content -->
-				<div class="relative bg-gray-100 rounded-lg shadow" @submit.prevent="submitForm()">
-					<form name="submissions" netlify method="post" enctype="multipart/form-data">
+				<div class="relative bg-gray-100 rounded-lg shadow" @submit.prevent="submitForm">
+					<form name="submissions" netlify enctype="multipart/form-data">
 						<!-- Modal header -->
 						<div class="flex items-start justify-between p-4 rounded-t">
 							<button
@@ -214,13 +214,13 @@
 						</div>
 						<!-- Modal footer -->
 						<div class="flex items-center justify-between p-6 space-x-2 border-t border-gray-200 rounded-b">
-							<input
+							<!-- <input
 								type="text"
 								name="name"
 								:placeholder="showFr ? 'Votre nom' : showEn ? 'Your name' : showNl ? 'Uw naam' : ''"
 								class="h-auto w-full"
 								required
-							/>
+							/> -->
 							<button
 								data-modal-hide="defaultModal"
 								type="submit"
