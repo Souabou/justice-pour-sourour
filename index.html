@@ -179,7 +179,7 @@
 			<div class="relative w-full max-w-2xl h-auto my-0">
 				<!-- Modal content -->
 				<div class="relative bg-gray-100 rounded-lg shadow">
-					<form name="submissionsForSourour" enctype="multipart/form-data" data-netlify="true">
+					<form action="/form" name="submissionsForSourour" enctype="multipart/form-data" data-netlify="true">
 						<input type="hidden" name="submissions" value="file-upload" />
 						<!-- Modal header -->
 						<div class="flex items-start justify-between p-4 rounded-t">
@@ -393,9 +393,13 @@
 				const formData = new FormData(event.target);
 				console.log(formData);
 
-				fetch('/', {
+				fetch('/form', {
 					method: 'POST',
 					// headers: { 'Content-Type': 'multipart/form-data' },
+					headers: {
+						Accept: 'application/x-www-form-urlencoded;charset=UTF-8',
+						'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+					},
 					body: new URLSearchParams(formData).toString(),
 				})
 					.then(() => {
