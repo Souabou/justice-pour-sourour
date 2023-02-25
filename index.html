@@ -395,7 +395,7 @@
 				fetch('/', {
 					method: 'POST',
 					headers: { 'Content-Type': 'multipart/form-data' },
-					body: new URLSearchParams(formData).toString(),
+					body: new URLSearchParams(formData),
 				})
 					.then(() => {
 						// this.showModal = false;
