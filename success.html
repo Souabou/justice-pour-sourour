@@ -171,16 +171,16 @@
 		<div id="image-container" class="flex flex-wrap gap-3 flex-grow mt-16"></div>
 
 		<div
-			class="fixed top-0 left-0 right-0 z-50 flex items-center justify-center w-full h-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 bg-black/50"
+			class="fixed top-0 left-0 right-0 z-50 flex items-center justify-center p-4 max-w-[30vw] overflow-x-hidden overflow-y-auto md:inset-0 bg-black/50"
 			x-show="showModal"
 			x-cloak
 		>
-			<div class="relative w-full max-w-2xl h-auto my-0">
+			<div class="relative max-w-[30vw] h-auto my-0">
 				<!-- Modal content -->
 				<div class="relative bg-gray-100 rounded-lg shadow">
 					<form action="/success" method="POST" name="submissions" enctype="multipart/form-data" data-netlify="true">
 						<!-- Modal header -->
-						<div class="flex items-start justify-between p-4 rounded-t">
+						<div class="flex items-start justify-between p-4 rounded-t -mb-4">
 							<button
 								type="button"
 								class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
@@ -203,7 +203,7 @@
 								<div class="mb-2">
 									<!-- Show the image -->
 									<template x-if="imageUrl">
-										<img :src="imageUrl" class="object-cover rounded border border-gray-200 max-h-[10vh]" style="max-width: 30vw" />
+										<img :src="imageUrl" class="object-fill rounded border border-gray-200 w-full h-auto" style="max-width: 30vw" />
 									</template>
 
 									<!-- Image file selector -->
@@ -214,27 +214,29 @@
 							</div>
 						</div>
 						<!-- Modal footer -->
-						<div class="flex items-center justify-between p-6 space-x-2 border-t border-gray-200 rounded-b">
-							<input
-								type="text"
-								name="name"
-								:placeholder="showFr ? 'Votre nom' : showEn ? 'Your name' : showNl ? 'Uw naam' : ''"
-								class="h-auto w-full px-2 py-1 rounded-md text-sm"
-							/>
+						<div class="flex flex-col p-6 border-t border-gray-200 rounded-b">
 							<input
 								type="text"
 								name="email"
 								:placeholder="showFr ? 'Votre email' : showEn ? 'Your email' : showNl ? 'Uw email' : ''"
 								class="h-auto w-full px-2 py-1 rounded-md text-sm"
 							/>
-							<button
-								data-modal-hide="defaultModal"
-								type="submit"
-								class="text-white bg-[#FF0000] hover:bg-opacity-25 hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-2 py-1 text-center"
-								x-text="showFr ? 'Envoyer' : showEn ? 'Send' : showNl ? 'Vestuur' : ''"
-							>
-								Send
-							</button>
+							<div class="flex space-x-2 mt-2">
+								<input
+									type="text"
+									name="name"
+									:placeholder="showFr ? 'Votre nom' : showEn ? 'Your name' : showNl ? 'Uw naam' : ''"
+									class="h-auto w-full px-2 py-1 rounded-md text-sm flex-1"
+								/>
+								<button
+									data-modal-hide="defaultModal"
+									type="submit"
+									class="text-white bg-[#FF0000] hover:bg-opacity-25 hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-2 py-1 text-center"
+									x-text="showFr ? 'Envoyer' : showEn ? 'Send' : showNl ? 'Vestuur' : ''"
+								>
+									Send
+								</button>
+							</div>
 						</div>
 					</form>
 				</div>
