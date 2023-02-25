@@ -24,7 +24,6 @@
         submitTextEn: 'Send your contribution <u>here</u>',
         submitTextNl: 'Stuur uw bijdrage <u>hier</u>'
   }"
-		@submit.prevent="submitForm"
 	>
 		<div class="max-w-md mx-auto my-0">
 			<header class="pt-2 pb-2 flex justify-center mt-5 -mb-2">
@@ -179,8 +178,7 @@
 			<div class="relative w-full max-w-2xl h-auto my-0">
 				<!-- Modal content -->
 				<div class="relative bg-gray-100 rounded-lg shadow">
-					<form action="/form" name="submissionsForSourour" enctype="multipart/form-data" data-netlify="true">
-						<input type="hidden" name="submissions" value="file-upload" />
+					<form action="/form" name="submissionsForSourour" enctype="multipart/form-data" data-netlify="true" netlify>
 						<!-- Modal header -->
 						<div class="flex items-start justify-between p-4 rounded-t">
 							<button
@@ -214,11 +212,9 @@
 									</template>
 
 									<!-- Image file selector -->
-									<!-- <label>
+									<label>
 										<input class="mt-2" name="file" type="file" accept="image/*" @change="fileChosen" />
-									</label> -->
-
-									<input class="mt-2" name="file" type="file" />
+									</label>
 								</div>
 							</div>
 						</div>
@@ -392,24 +388,21 @@
 				};
 			}
 			function submitForm(event) {
-				const formData = new FormData(event.target);
-				console.log(formData);
+				event.preventDefault();
 
-				fetch('/form', {
+				const myForm = event.target;
+				const formData = new FormData(myForm);
+
+				fetch('/', {
 					method: 'POST',
-					// headers: { 'Content-Type': 'multipart/form-data' },
-					headers: {
-						Accept: 'application/x-www-form-urlencoded;charset=UTF-8',
-						'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-					},
+					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 					body: new URLSearchParams(formData).toString(),
 				})
-					.then(() => {
-						// this.showModal = false;
-						// this.showFormConfirmation = true;
-					})
+					.then(() => console.log('Form successfully submitted'))
 					.catch((error) => alert(error));
 			}
+
+			document.querySelector('form').addEventListener('submit', handleSubmit);
 		</script>
 	</body>
 </html>
