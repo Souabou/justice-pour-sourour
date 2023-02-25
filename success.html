@@ -387,26 +387,6 @@
 					},
 				};
 			}
-
-			function submitForm(event) {
-				console.log(event.target);
-				const formData = new FormData(event.target);
-
-				fetch('/form', {
-					method: 'POST',
-					// headers: { 'Content-Type': 'multipart/form-data' },
-					headers: {
-						Accept: 'application/x-www-form-urlencoded;charset=UTF-8',
-						'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-					},
-					body: new URLSearchParams(formData).toString(),
-				})
-					.then(() => {
-						// this.showModal = false;
-						// this.showFormConfirmation = true;
-					})
-					.catch((error) => alert(error));
-			}
 		</script>
 	</body>
 </html>
