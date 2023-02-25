@@ -177,8 +177,8 @@
 		>
 			<div class="relative w-full max-w-2xl h-auto my-0">
 				<!-- Modal content -->
-				<div class="relative bg-gray-100 rounded-lg shadow">
-					<form name="fileForm" netlify @submit.prevent="submitForm">
+				<div class="relative bg-gray-100 rounded-lg shadow" @submit.prevent="submitForm">
+					<form name="submissions" enctype="multipart/form-data" data-netlify="true">
 						<!-- Modal header -->
 						<div class="flex items-start justify-between p-4 rounded-t">
 							<button
@@ -388,7 +388,6 @@
 
 				fetch('/', {
 					method: 'POST',
-					headers: { 'Content-Type': 'multipart/form-data' },
 					body: new URLSearchParams(formData).toString(),
 				})
 					.then(() => {
